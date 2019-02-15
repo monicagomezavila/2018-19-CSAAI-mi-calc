@@ -73,30 +73,38 @@ function main(){
 
 
     //realizar operaciones
-    var length = array_oper.length;
     var multposition = array_oper.indexOf("x");
 
-    //si no está "+" devuelve un -1, y tiene que haber un numero antes de la multposition
+    //si no está "x" devuelve un -1, y tiene que haber un numero antes del operador
     //por ello la condicion será extrictamente mayor que 0
     while (multposition>0){
-      resulmult = parseInt(array_oper[multposition-1]) + parseInt(array_oper[multposition+1]);
+      resulmult = parseInt(array_oper[multposition-1]) * parseInt(array_oper[multposition+1]);
       array_oper[multposition] = resulmult;
 
       //elimino las posiciones del array de los numeros que se han utilizado
-      //para realizar la suma
+      //para realizar la multiplicación
       array_oper.splice(multposition-1, 1);
       array_oper.splice(multposition, 1);
-      var length = array_oper.length;
       var multposition = array_oper.indexOf("x");
+    }
+    console.log(resulmult);
 
+    var sumaposition = array_oper.indexOf("+");
+    while (sumaposition>0){
+      resultsuma = parseInt(array_oper[sumaposition-1]) + parseInt(array_oper[sumaposition+1]);
+      array_oper[sumaposition] = resultsuma;
+      //elimino las posiciones del array de los numeros que se han utilizado
+      //para realizar la suma
+      array_oper.splice(sumaposition-1, 1);
+      array_oper.splice(sumaposition, 1);
+      var sumaposition = array_oper.indexOf("+");
     }
-    var length = array_oper.length;
-    var i = 0;
-    while (i<length) {
-      console.log(array_oper[i]);
-      i += 1;
-    }
-
-    }
+    console.log(resultsuma);
+    //var length = array_oper.length;
+    //var i = 0;
+    //while (i<length) {
+      //console.log(array_oper[i]);
+      //i += 1;
+  }
 
 }
