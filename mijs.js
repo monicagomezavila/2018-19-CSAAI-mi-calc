@@ -72,9 +72,12 @@ function main(){
     display.innerHTML = operaciondisplay;
 
 
+    var resultado_final = 0.0;
     //realizar operaciones
-    var multposition = array_oper.indexOf("x");
 
+
+    var multposition = array_oper.indexOf("x");
+    var resulmult = null;
     //si no está "x" devuelve un -1, y tiene que haber un numero antes del operador
     //por ello la condicion será extrictamente mayor que 0
     while (multposition>0){
@@ -87,9 +90,12 @@ function main(){
       array_oper.splice(multposition, 1);
       var multposition = array_oper.indexOf("x");
     }
-    console.log(resulmult);
+    if (resulmult!=null){
+      resultado_final = resulmult;
+    }
 
     var sumaposition = array_oper.indexOf("+");
+    var resultsuma = null;
     while (sumaposition>0){
       resultsuma = parseInt(array_oper[sumaposition-1]) + parseInt(array_oper[sumaposition+1]);
       array_oper[sumaposition] = resultsuma;
@@ -99,12 +105,15 @@ function main(){
       array_oper.splice(sumaposition, 1);
       var sumaposition = array_oper.indexOf("+");
     }
-    console.log(resultsuma);
+    if (resultsuma!=null){
+      resultado_final = resultsuma;
+    }
     //var length = array_oper.length;
     //var i = 0;
     //while (i<length) {
       //console.log(array_oper[i]);
       //i += 1;
+    display.innerHTML = resultado_final;
   }
 
 }
