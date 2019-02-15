@@ -1,5 +1,5 @@
 function main(){
-  console.log("que comiencen los juegos del js");
+  console.log("CALCULADORA en javascript");
 
   var boton1 = document.getElementById('boton1');
   var boton2 = document.getElementById('boton2');
@@ -45,10 +45,23 @@ function main(){
     array_oper.push(numero);
     numero = "";
     //se incluye después del número en el array el operador
-    //que se va a utilizar "+""
+    //que se va a utilizar "+"
     array_oper.push("+");
     var display = document.getElementById('display');
     operaciondisplay = operaciondisplay + "+";
+    display.innerHTML = operaciondisplay;
+  }
+
+  multiplicacion.onclick = () => {
+    //cuando pulsen un tipo de operacion, el numero que se estaba formando
+    //se incluye al array
+    array_oper.push(numero);
+    numero = "";
+    //se incluye después del número en el array el operador
+    //que se va a utilizar "x"
+    array_oper.push("x");
+    var display = document.getElementById('display');
+    operaciondisplay = operaciondisplay + "x";
     display.innerHTML = operaciondisplay;
   }
 
@@ -61,29 +74,28 @@ function main(){
 
     //realizar operaciones
     var length = array_oper.length;
-    var sumaposition = array_oper.indexOf("+");
+    var multposition = array_oper.indexOf("x");
 
-    //si no está "+" devuelve un -1, y tiene que haber un numero antes de la sumaposition
+    //si no está "+" devuelve un -1, y tiene que haber un numero antes de la multposition
     //por ello la condicion será extrictamente mayor que 0
-    while (sumaposition>0){
-      resulsuma = parseInt(array_oper[sumaposition-1]) + parseInt(array_oper[sumaposition+1]);
-      array_oper[sumaposition] = resulsuma;
+    while (multposition>0){
+      resulmult = parseInt(array_oper[multposition-1]) + parseInt(array_oper[multposition+1]);
+      array_oper[multposition] = resulmult;
 
       //elimino las posiciones del array de los numeros que se han utilizado
       //para realizar la suma
-      array_oper.splice(sumaposition-1, 1);
-      array_oper.splice(sumaposition, 1);
+      array_oper.splice(multposition-1, 1);
+      array_oper.splice(multposition, 1);
       var length = array_oper.length;
-      var sumaposition = array_oper.indexOf("+");
-      //i = 0;
-      //while (i<length) {
-        //console.log(i);
-        //console.log(array_oper[i]);
-        //i += 1;
-      //}
-    }
-    console.log(resulsuma);
+      var multposition = array_oper.indexOf("x");
 
+    }
+    var length = array_oper.length;
+    var i = 0;
+    while (i<length) {
+      console.log(array_oper[i]);
+      i += 1;
+    }
 
     }
 
