@@ -1,25 +1,26 @@
 body {
-  background-color: white;
+  background-color: #C6D4E0;
 }
 
 p {
   font-family: monospace;
-  font-size: 30px;
+  font-size: 35px;
   border: 1.5px outset black;
   border-radius: 8px;
-  background-color: #C6D4E0;
+  background-image: url("css.jpg");
   padding:20px;
   text-align: right;
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 460px;
+  color: white;
+  font-weight: bold;
 }
 
-button {
+button, button1 {
   background-color: #C6D4E0;
   border-radius: 10px;
   color: black;
-  width: 90px;
   text-align: center;
   padding: 10px 10px;
   font-size: 20px;
@@ -29,8 +30,24 @@ button {
   transition-duration: 0.4s;
 }
 
+.button{
+  width: 90px;
+}
+
+.button1{
+  width: 60px;
+  font-weight: bold;
+
+}
+
 .button:hover {
-  background-color: #3A5163;
+  background-image: url("css.jpg");
+  /*background-color: #3A5163;*/
+  color: white;
+}
+
+.button1:hover {
+  background-image: url("css.jpg");
   color: white;
 }
 
@@ -39,17 +56,17 @@ button {
   margin: auto;
   margin-top: 600;
   width: 500px;
-  height:500px;
+  height:250px;
   border: 1.5px outset black;
   border-radius: 10px;
-  background-color: #3A5163
+  background-image: url("css.jpg");
+  /*background-color: #4d4d33;*/
 }
 
 #izquierda {
-  /*border: 1.5px outset black;*/
   margin:auto;
-  width: 325px;
-  height: 475px;
+  width: 310px;
+  height: 250px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
@@ -57,12 +74,11 @@ button {
 }
 
 #derecha {
-  /*border: 1.5px outset black;*/
   margin:auto;
-  width: 90px;
-  height: 475px;
-  padding-left: 0px;
-  padding-right: 50px;
+  width: 150px;
+  height: 250px;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-top: 10px;
   float:right;
 }
