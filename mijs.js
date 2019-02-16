@@ -67,6 +67,27 @@ function main(){
     numero = "";
   }
 
+  DEL.onclick = () => {
+    //si se pulsa este botón borra el último elemento que esté en el display
+    if (numero != ""){
+      var length = numero.length;
+      numero = numero.slice(0, length-1);
+      var length = operaciondisplay.length;
+      operaciondisplay = operaciondisplay.slice(0, length-1);
+
+      //Si se borra todo el número el display se pone a 0
+      if (operaciondisplay != ""){
+        display.innerHTML = operaciondisplay;
+      }else{
+        display.innerHTML = 0;
+      }
+    }else{
+      array_oper.pop();
+      var length = operaciondisplay.length;
+      operaciondisplay = operaciondisplay.slice(0, length-1);
+      display.innerHTML = operaciondisplay;
+    }
+  }
 
   resultado.onclick = () => {
 
