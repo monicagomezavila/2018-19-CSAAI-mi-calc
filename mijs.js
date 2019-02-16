@@ -31,6 +31,48 @@ function main(){
     display.innerHTML = operaciondisplay;
   }
 
+  boton4.onclick = () => {
+    var display = document.getElementById('display');
+    operaciondisplay = operaciondisplay + "4";
+    numero = numero +"4";
+    display.innerHTML = operaciondisplay;
+  }
+
+  boton5.onclick = () => {
+    var display = document.getElementById('display');
+    operaciondisplay = operaciondisplay + "5";
+    numero = numero +"5";
+    display.innerHTML = operaciondisplay;
+  }
+
+  boton6.onclick = () => {
+    var display = document.getElementById('display');
+    operaciondisplay = operaciondisplay + "6";
+    numero = numero +"6";
+    display.innerHTML = operaciondisplay;
+  }
+
+  boton7.onclick = () => {
+    var display = document.getElementById('display');
+    operaciondisplay = operaciondisplay + "7";
+    numero = numero +"7";
+    display.innerHTML = operaciondisplay;
+  }
+
+  boton8.onclick = () => {
+    var display = document.getElementById('display');
+    operaciondisplay = operaciondisplay + "8";
+    numero = numero +"8";
+    display.innerHTML = operaciondisplay;
+  }
+
+  boton9.onclick = () => {
+    var display = document.getElementById('display');
+    operaciondisplay = operaciondisplay + "9";
+    numero = numero +"9";
+    display.innerHTML = operaciondisplay;
+  }
+
 
   suma.onclick = () => {
     //cuando pulsen un tipo de operacion, el numero que se estaba formando
@@ -75,17 +117,16 @@ function main(){
       var length = operaciondisplay.length;
       operaciondisplay = operaciondisplay.slice(0, length-1);
 
-      //Si se borra todo el número el display se pone a 0
-      if (operaciondisplay != ""){
-        display.innerHTML = operaciondisplay;
-      }else{
-        display.innerHTML = 0;
-      }
     }else{
       array_oper.pop();
       var length = operaciondisplay.length;
       operaciondisplay = operaciondisplay.slice(0, length-1);
+    }
+    //Si se borra todo el número el display se pone a 0
+    if (operaciondisplay != ""){
       display.innerHTML = operaciondisplay;
+    }else{
+      display.innerHTML = 0;
     }
   }
 
