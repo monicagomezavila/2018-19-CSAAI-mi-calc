@@ -1,11 +1,6 @@
 function main(){
+
   console.log("CALCULADORA en javascript");
-
-  var boton1 = document.getElementById('boton1');
-  var boton2 = document.getElementById('boton2');
-  var boton3 = document.getElementById('boton3');
-  var suma = document.getElementById('suma');
-
 
   //variable que se mostrará en el display de la calculadora
   var operaciondisplay = "";
@@ -18,7 +13,6 @@ function main(){
   boton1.onclick = () => {
     var display = document.getElementById('display');
     operaciondisplay = operaciondisplay + "1";
-    //añade al numero que se esté formando un 1
     numero = numero +"1";
     display.innerHTML = operaciondisplay;
   }
@@ -26,7 +20,6 @@ function main(){
   boton2.onclick = () => {
     var display = document.getElementById('display');
     operaciondisplay = operaciondisplay + "2";
-    //añade al numero que se esté formando un 2
     numero = numero +"2";
     display.innerHTML = operaciondisplay;
   }
@@ -34,10 +27,10 @@ function main(){
   boton3.onclick = () => {
     var display = document.getElementById('display');
     operaciondisplay = operaciondisplay + "3";
-    //añade al numero que se esté formando un 3
     numero = numero +"3";
     display.innerHTML = operaciondisplay;
   }
+
 
   suma.onclick = () => {
     //cuando pulsen un tipo de operacion, el numero que se estaba formando
@@ -65,7 +58,18 @@ function main(){
     display.innerHTML = operaciondisplay;
   }
 
+
+  AC.onclick = () => {
+    //si se pulsa este botón borra todo el array_oper
+    array_oper = [];
+    operaciondisplay = "";
+    display.innerHTML = 0;
+    numero = "";
+  }
+
+
   resultado.onclick = () => {
+
     array_oper.push(numero);
     var display = document.getElementById('display');
     operaciondisplay = operaciondisplay + "=";
@@ -77,7 +81,7 @@ function main(){
 
 
     var multposition = array_oper.indexOf("x");
-    var resulmult = null;
+    resulmult = null;
     //si no está "x" devuelve un -1, y tiene que haber un numero antes del operador
     //por ello la condicion será extrictamente mayor que 0
     while (multposition>0){
