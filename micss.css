@@ -19,12 +19,12 @@ button {
   background-color: #C6D4E0;
   border-radius: 10px;
   color: black;
-  padding: 10px 10px;
+  width: 90px;
   text-align: center;
+  padding: 10px 10px;
   font-size: 20px;
   margin: 5px 5px;
   cursor: pointer;
-  padding: 10px 40px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
