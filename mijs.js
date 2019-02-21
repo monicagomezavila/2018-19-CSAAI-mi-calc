@@ -1,175 +1,183 @@
 function main(){
 
+  //objeto calculadora con todos los elementos(numeros, operador, igual y display)
+  //atributos: operandos operador y eatado=init
+  var gui ={
+    display: document.getElementById('display'),
+    boton1: document.getElementById('boton1'),
+    boton2: document.getElementById('boton2'),
+    boton3: document.getElementById('boton3'),
+    boton4: document.getElementById('boton4'),
+    boton5: document.getElementById('boton5'),
+    boton6: document.getElementById('boton6'),
+    boton7: document.getElementById('boton7'),
+    boton8: document.getElementById('boton8'),
+    boton9: document.getElementById('boton9'),
+    suma: document.getElementById('suma'),
+    multiplicacion: document.getElementById('multiplicacion'),
+    AC: document.getElementById('AC'),
+    DEL: document.getElementById('DEL'),
+    resultado: document.getElementById('resultado'),
+    //variable que se mostrará en el display de la calculadora
+    operacionesdisplay:"",
+    //variable que irá formando un número introducido por el usuario
+    numero: "",
+    //array donde se guardas numeros y operaciones en cada posicion según
+    //el orden introducido por el usuario
+    array_oper: []
+  }
+
   console.log("CALCULADORA en javascript");
 
-  //variable que se mostrará en el display de la calculadora
-  var operaciondisplay = "";
-  //variable que irá formando un número introducido por el usuario
-  var numero = "";
-  //array donde se guardas numeros y operaciones en cada posicion según
-  //el orden introducido por el usuario
-  var array_oper = [];
 
-  boton1.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "1";
-    numero = numero +"1";
-    display.innerHTML = operaciondisplay;
+  gui.boton1.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "1";
+    gui.numero = gui.numero +"1";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton2.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "2";
-    numero = numero +"2";
-    display.innerHTML = operaciondisplay;
+  gui.boton2.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "2";
+    gui.numero = gui.numero +"2";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton3.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "3";
-    numero = numero +"3";
-    display.innerHTML = operaciondisplay;
+  gui.boton3.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "3";
+    gui.numero = gui.numero +"3";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton4.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "4";
-    numero = numero +"4";
-    display.innerHTML = operaciondisplay;
+  gui.boton4.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "4";
+    gui.numero = gui.numero +"4";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton5.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "5";
-    numero = numero +"5";
-    display.innerHTML = operaciondisplay;
+  gui.boton5.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "5";
+    gui.numero = gui.numero +"5";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton6.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "6";
-    numero = numero +"6";
-    display.innerHTML = operaciondisplay;
+  gui.boton6.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "6";
+    gui.numero = gui.numero +"6";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton7.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "7";
-    numero = numero +"7";
-    display.innerHTML = operaciondisplay;
+  gui.boton7.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "7";
+    gui.numero = gui.numero +"7";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton8.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "8";
-    numero = numero +"8";
-    display.innerHTML = operaciondisplay;
+  gui.boton8.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "8";
+    gui.numero = gui.numero +"8";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  boton9.onclick = () => {
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "9";
-    numero = numero +"9";
-    display.innerHTML = operaciondisplay;
+  gui.boton9.onclick = () => {
+    gui.operaciondisplay = gui.operaciondisplay + "9";
+    gui.numero = gui.numero +"9";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
 
-  suma.onclick = () => {
+  gui.suma.onclick = () => {
     //cuando pulsen un tipo de operacion, el numero que se estaba formando
     //se incluye al array
-    array_oper.push(numero);
-    numero = "";
+    gui.array_oper.push(gui.numero);
+    gui.numero = "";
     //se incluye después del número en el array el operador
     //que se va a utilizar "+"
-    array_oper.push("+");
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "+";
-    display.innerHTML = operaciondisplay;
+    gui.array_oper.push("+");
+    gui.operaciondisplay = gui.operaciondisplay + "+";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
-  multiplicacion.onclick = () => {
+  gui.multiplicacion.onclick = () => {
     //cuando pulsen un tipo de operacion, el numero que se estaba formando
     //se incluye al array
-    array_oper.push(numero);
-    numero = "";
+    gui.array_oper.push(gui.numero);
+    gui.numero = "";
     //se incluye después del número en el array el operador
     //que se va a utilizar "x"
-    array_oper.push("x");
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "x";
-    display.innerHTML = operaciondisplay;
+    gui.array_oper.push("x");
+    gui.operaciondisplay = gui.operaciondisplay + "x";
+    gui.display.innerHTML = gui.operaciondisplay;
   }
 
 
-  AC.onclick = () => {
+  gui.AC.onclick = () => {
     //si se pulsa este botón borra todo el array_oper
-    array_oper = [];
-    operaciondisplay = "";
-    display.innerHTML = 0;
-    numero = "";
+    gui.array_oper = [];
+    gui.operaciondisplay = "";
+    gui.display.innerHTML = 0;
+    gui.numero = "";
   }
 
-  DEL.onclick = () => {
+  gui.DEL.onclick = () => {
     //si se pulsa este botón borra el último elemento que esté en el display
-    if (numero != ""){
-      var length = numero.length;
-      numero = numero.slice(0, length-1);
-      var length = operaciondisplay.length;
-      operaciondisplay = operaciondisplay.slice(0, length-1);
+    if (gui.numero != ""){
+      var length = gui.numero.length;
+      gui.numero = gui.numero.slice(0, length-1);
+      var length = gui.operaciondisplay.length;
+      gui.operaciondisplay = gui.operaciondisplay.slice(0, length-1);
 
     }else{
-      array_oper.pop();
-      var length = operaciondisplay.length;
-      operaciondisplay = operaciondisplay.slice(0, length-1);
+      gui.array_oper.pop();
+      var length = gui.operaciondisplay.length;
+      gui.operaciondisplay = gui.operaciondisplay.slice(0, length-1);
     }
     //Si se borra todo el número el display se pone a 0
-    if (operaciondisplay != ""){
-      display.innerHTML = operaciondisplay;
+    if (gui.operaciondisplay != ""){
+      gui.display.innerHTML = gui.operaciondisplay;
     }else{
-      display.innerHTML = 0;
+      gui.display.innerHTML = 0;
     }
   }
 
-  resultado.onclick = () => {
+  gui.resultado.onclick = () => {
 
-    array_oper.push(numero);
-    var display = document.getElementById('display');
-    operaciondisplay = operaciondisplay + "=";
-    display.innerHTML = operaciondisplay;
+    gui.array_oper.push(gui.numero);
+    gui.operaciondisplay = gui.operaciondisplay + "=";
+    gui.display.innerHTML = gui.operaciondisplay;
 
 
     var resultado_final = 0.0;
     //realizar operaciones
 
 
-    var multposition = array_oper.indexOf("x");
+    var multposition = gui.array_oper.indexOf("x");
     resulmult = null;
     //si no está "x" devuelve un -1, y tiene que haber un numero antes del operador
     //por ello la condicion será extrictamente mayor que 0
     while (multposition>0){
-      resulmult = parseInt(array_oper[multposition-1]) * parseInt(array_oper[multposition+1]);
-      array_oper[multposition] = resulmult;
+      resulmult = parseInt(gui.array_oper[multposition-1]) * parseInt(gui.array_oper[multposition+1]);
+      gui.array_oper[multposition] = resulmult;
 
       //elimino las posiciones del array de los numeros que se han utilizado
       //para realizar la multiplicación
-      array_oper.splice(multposition-1, 1);
-      array_oper.splice(multposition, 1);
-      var multposition = array_oper.indexOf("x");
+      gui.array_oper.splice(multposition-1, 1);
+      gui.array_oper.splice(multposition, 1);
+      var multposition = gui.array_oper.indexOf("x");
     }
     if (resulmult!=null){
       resultado_final = resulmult;
     }
 
-    var sumaposition = array_oper.indexOf("+");
+    var sumaposition = gui.array_oper.indexOf("+");
     var resultsuma = null;
     while (sumaposition>0){
-      resultsuma = parseInt(array_oper[sumaposition-1]) + parseInt(array_oper[sumaposition+1]);
-      array_oper[sumaposition] = resultsuma;
+      resultsuma = parseInt(gui.array_oper[sumaposition-1]) + parseInt(gui.array_oper[sumaposition+1]);
+      gui.array_oper[sumaposition] = resultsuma;
       //elimino las posiciones del array de los numeros que se han utilizado
       //para realizar la suma
-      array_oper.splice(sumaposition-1, 1);
-      array_oper.splice(sumaposition, 1);
-      var sumaposition = array_oper.indexOf("+");
+      gui.array_oper.splice(sumaposition-1, 1);
+      gui.array_oper.splice(sumaposition, 1);
+      var sumaposition = gui.array_oper.indexOf("+");
     }
     if (resultsuma!=null){
       resultado_final = resultsuma;
@@ -179,7 +187,7 @@ function main(){
     //while (i<length) {
       //console.log(array_oper[i]);
       //i += 1;
-    display.innerHTML = resultado_final;
+    gui.display.innerHTML = resultado_final;
   }
 
 }
