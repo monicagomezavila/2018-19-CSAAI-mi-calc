@@ -13,8 +13,11 @@ function main(){
     boton7: document.getElementById('boton7'),
     boton8: document.getElementById('boton8'),
     boton9: document.getElementById('boton9'),
+    boton0: document.getElementById('boton0'),
     suma: document.getElementById('suma'),
     multiplicacion: document.getElementById('multiplicacion'),
+    division: document.getElementById('division'),
+    resta: document.getElementById('resta'),
     resultado: document.getElementById('resultado'),
     AC: document.getElementById('AC'),
     DEL: document.getElementById('DEL')
@@ -100,6 +103,21 @@ function main(){
         resultado_final = resulmult;
       }
 
+      var divposition = this.array_oper.indexOf("/");
+      resuldiv = null;
+      while (divposition>0){
+        resuldiv = parseInt(this.array_oper[divposition-1]) / parseInt(this.array_oper[divposition+1]);
+        this.array_oper[divposition] = resuldiv;
+        //elimino las posiciones del array de los numeros que se han utilizado
+        //para realizar la división
+        this.array_oper.splice(divposition-1, 1);
+        this.array_oper.splice(divposition, 1);
+        var divposition = this.array_oper.indexOf("/");
+      }
+      if (resuldiv!=null){
+        resultado_final = resuldiv;
+      }
+
       var sumaposition = this.array_oper.indexOf("+");
       var resultsuma = null;
       while (sumaposition>0){
@@ -114,10 +132,24 @@ function main(){
       if (resultsuma!=null){
         resultado_final = resultsuma;
       }
+
+      var restaposition = this.array_oper.indexOf("-");
+      var resultresta = null;
+      while (restaposition>0){
+        resultresta = parseInt(this.array_oper[restaposition-1]) - parseInt(this.array_oper[restaposition+1]);
+        this.array_oper[restaposition] = resultresta;
+        //elimino las posiciones del array de los numeros que se han utilizado
+        //para realizar la resta
+        this.array_oper.splice(restaposition-1, 1);
+        this.array_oper.splice(restaposition, 1);
+        var restaposition = this.array_oper.indexOf("-");
+      }
+      if (resultresta!=null){
+        resultado_final = resultresta;
+      }
       gui.display.innerHTML = resultado_final;
     }
   }
-
 
   console.log("CALCULADORA en javascript");
 
@@ -157,12 +189,24 @@ function main(){
     calculadora.addnumber(9);
   }
 
+  gui.boton0.onclick = () => {
+    calculadora.addnumber(0);
+  }
+
   gui.suma.onclick = () => {
     calculadora.addoper("+");
   }
 
   gui.multiplicacion.onclick = () => {
     calculadora.addoper("x");
+  }
+
+  gui.division.onclick = () => {
+    calculadora.addoper("/");
+  }
+
+  gui.resta.onclick = () => {
+    calculadora.addoper("-");
   }
 
   gui.AC.onclick = () => {
